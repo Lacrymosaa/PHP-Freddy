@@ -1,0 +1,29 @@
+.navbar-custom,
+.card-body{
+    background-color: #1a1a1c;
+    opacity: 97%;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text, 
+.navbar-custom .nav-link,
+.card-custom .card-body,
+.card-custom .card-title,
+.card-custom .card-text{
+    color: #bfbfbf;
+}
+li a.active{
+    background-color: #ffffffa1;
+    font: bold;
+}
+.card-custom .card-body,
+.card-custom .card-title,
+.card-custom .card-text{
+    color: #ffffff;
+}
+body {
+    background-image: url(image/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
