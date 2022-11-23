@@ -81,6 +81,7 @@
                   if (!isset($_SESSION))
                     session_start();
                   $_SESSION["id"] = $id;
+                  $_SESSION["email"] = $email;
                   header("Location:index.php");
                 } else {
                   header("Location:login.php");

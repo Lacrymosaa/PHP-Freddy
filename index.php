@@ -28,12 +28,34 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.php">Login</a>
-              </li><
-              <li class="nav-item">
-                <a class="nav-link" href="register.php">Register</a>
-              </li>
+              <?php
+                session_start();
+
+                if (isset($_SESSION['email'])) {
+              ?>
+                <li class="nav-item" style="float: right;">
+                  <a class="nav-link" href="logout.php">Log out</a>
+                </li>
+              <?php
+                if ($_SESSION['email'] == 'yuzuvulpes@gmail.com') {
+              ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="adm.php">Administrador</a>
+                </li>  
+              <?php             
+                }
+              }
+                else {
+              ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="register.php">Register</a>
+                </li>
+              <?php
+                }
+              ?>
             </ul>
           </div>
         </div>
