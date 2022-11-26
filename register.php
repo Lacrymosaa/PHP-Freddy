@@ -71,17 +71,24 @@
               $senha = $_POST['senha'];
 
               try {
-
-                $stmt = $conn->prepare("INSERT INTO `cadastros` (`id`, `username`, `email`, `senha`) VALUES (NULL, :username, :email, :senha);");
-                $stmt->bindParam("username",$username);
-                $stmt->bindParam("email",$email);
-                $stmt->bindParam("senha",$senha);
-                
-                if($stmt->execute()){
-                  header("Location:login.php");
+                $stmt1 = $conn->prepare("SELECT * FROM `cadastros` WHERE `email` = :email");
+                $stmt1->bindParam("email",$email);
+                $stmt1->execute();
+                if ($stmt1->rowCount() >= 1) {
+                  echo 'Email is already been used!';
                 }
-                else{
-                  header("Location:register.php?msg=Erro na inclusão do usuário!");
+                else {
+                  $stmt2 = $conn->prepare("INSERT INTO `cadastros` (`id`, `username`, `email`, `senha`) VALUES (NULL, :username, :email, :senha);");
+                  $stmt2->bindParam("username",$username);
+                  $stmt2->bindParam("email",$email);
+                  $stmt2->bindParam("senha",$senha);
+                  
+                  if($stmt2->execute()){
+                    header("Location:login.php");
+                  }
+                  else{
+                    header("Location:register.php?msg=Erro na inclusão do usuário!");
+                  }
                 }
               
               } catch(PDOException $e) {
@@ -89,7 +96,8 @@
               }
               
               $conn = null;
-              $stmt = null;
+              $stmt1 = null;
+              $stmt2 = null;
             }
             
           ?>
