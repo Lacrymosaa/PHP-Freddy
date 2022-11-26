@@ -1,7 +1,0 @@
-cadastros
-id, username, email, senha
-
-PEDIDO ~~~~
-NAME
-ADDRESS
-ORDER
