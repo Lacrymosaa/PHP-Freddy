@@ -21,7 +21,7 @@
   <!--NAVBAR-->
   <nav class="navbar navbar-custom navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Freddy Fazbear's Pizza</a>
+      <a class="navbar-brand" href="index.php">Freddy Fazbear's Pizza</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
             </div>
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
-              <input type="senha" name="senha" class="form-control" required>
+              <input type="password" name="senha" class="form-control" required>
               <div id="emailHelp" class="form-text">Funcionários da Freddy's Entertainment nunca pedirão sua senha.
               </div>
             </div>
