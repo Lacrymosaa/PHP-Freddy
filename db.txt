@@ -1,0 +1,5 @@
+cadastros
+id, username, email, senha
+
+pedidos
+num, comida, bebida, endereco
